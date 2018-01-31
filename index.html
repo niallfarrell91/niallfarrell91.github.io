@@ -1,1 +1,25 @@
-Hello World
+<html><head></head><body>
+    <p>Please wait while we redirect you to Your APP NAME...</p>
+    <p><a href="javascript:redirectToApp()">Open appname</a></p>
+    <script>
+      var redirectToApp = function() {
+        var scheme = "appnameapp";
+        var openURL = "appname" + window.location.pathname + window.location.search + window.location.hash;
+        var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        var Android = /Android/.test(navigator.userAgent);
+        var newLocation;
+        if (iOS) {
+          newLocation = scheme + ":" + openURL;
+        } else if (Android) {
+          newLocation = "intent://" + openURL + "#Intent;scheme=" + scheme + ";package=com.appnameapp;end";
+        } else {
+          newLocation = scheme + "://" + openURL;
+        }
+        console.log(newLocation)
+        window.location.replace(newLocation);
+      }
+      window.onload = redirectToApp;
+    </script>
+    
+    
+    </body></html>
