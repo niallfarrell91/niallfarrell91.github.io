@@ -1,35 +1,16 @@
 <html>
 
-<head></head>
-
 <body onload="redirectToApp()">
-  <p>Please wait while we redirect you to Your SmartLakes...</p>
-  <!-- <p><a href="javascript:redirectToApp()">Open appname</a></p> -->
-  <!-- <script type="text/javascript">
-    redirectToApp();
-  </script> -->
+
+  <h1>Please wait while we redirect you to Your SmartLakes...</h1>
+  
   <script>
-    function redirectToApp () {
-      var scheme = "AlabamapowerShorelines";   //myTestNestApp
-      var openURL = "AlabamapowerShorelines" + window.location.pathname + window.location.search + window.location.hash;
-      var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-      var Android = /Android/.test(navigator.userAgent);
-      var newLocation;
-      if (iOS) {
-        newLocation = scheme + ":" + openURL;
-      } else if (Android) {
-        newLocation = "intent://" + openURL + "#Intent;scheme=" + scheme + ";package=com.appnameapp;end";
-      } else {
-        newLocation = scheme + "://" + openURL;
-      }
-      console.log(newLocation)
-      window.location.replace(newLocation);
-      window.postMessage(openURL);
-    }
-    //window.onload = redirectToApp;
+  function redirectToApp() {
+      var code = "AlabamapowerShorelines" + window.location.pathname + window.location.search + window.location.hash;
+      window.postMessage(code);
+  }
   </script>
-
-
-</body>
+  
+  </body>
 
 </html>
