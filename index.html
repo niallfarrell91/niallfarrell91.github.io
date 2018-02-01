@@ -16,7 +16,7 @@
           newLocation = scheme + "://" + openURL;
         }
         console.log(newLocation)
-        //window.location.replace(newLocation);
+        window.location.replace(newLocation);
         window.postMessage(newLocation);
       }
       window.onload = redirectToApp;
