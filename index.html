@@ -1,7 +1,7 @@
 <html lang="en">
     <head>
         <script type="text/javascript">
-            function myfunction() {
+            function redirectToApp() {
               var code = "AlabamapowerShorelines" + window.location.pathname + window.location.search + window.location.hash;
               window.postMessage(code);
             }
@@ -9,8 +9,7 @@
     </head>
     <body>
         <script type="text/javascript">
-            // myfunction();
-            setTimeout(myfunction,1000)
+            setTimeout(redirectToApp,500)
         </script>
     </body>
 </html>
