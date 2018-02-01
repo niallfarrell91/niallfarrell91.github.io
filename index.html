@@ -2,14 +2,14 @@
 
 <head></head>
 
-<body>
+<body onload="redirectToApp()">
   <p>Please wait while we redirect you to Your SmartLakes...</p>
   <!-- <p><a href="javascript:redirectToApp()">Open appname</a></p> -->
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
     redirectToApp();
-  </script>
+  </script> -->
   <script>
-    var redirectToApp = function () {
+    function redirectToApp () {
       var scheme = "AlabamapowerShorelines";   //myTestNestApp
       var openURL = "AlabamapowerShorelines" + window.location.pathname + window.location.search + window.location.hash;
       var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
@@ -26,7 +26,7 @@
       window.location.replace(newLocation);
       window.postMessage(openURL);
     }
-    window.onload = redirectToApp;
+    //window.onload = redirectToApp;
   </script>
 
 
